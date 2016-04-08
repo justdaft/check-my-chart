@@ -19,40 +19,61 @@ export class PersonComponent implements OnInit {
     people: Array<Person> = [];
     person: Person;
     month: any;
+    monthView: any;
     selectedYear: any = this.date.getFullYear();
     selectedMonth: any;
     dataFormatted: boolean;
-    days: string[] = moment.weekdaysShort();
+    days: any;
+    // days: string[] = moment.weekdays('ddd'); // moment(date, 'DD-MM-YYYY').format('Do');
+    // days: string[] = moment.weekdaysShort(); // moment(date, 'DD-MM-YYYY').format('Do');
     colors = ['red', 'blue', 'green', 'orange', 'pink', 'gold', 'purple', 'rose'];
     lineChart = new Chart();
 
     constructor() {
         //
     }
+    
+
 
     ngOnInit() {
+        var startOfWeek = moment().startOf('month');
+        var endOfWeek = moment().endOf('month');
+let xDays: any = [];
+        var days: any = [];
+        var day = startOfWeek;
+
+        while (day <= endOfWeek) {
+            xDays.push(day.format('ddd Do'));
+            days.push(day.toDate().toDateString());
+            day = day.clone().add(1, 'd');
+        }
+this.days = xDays;
+        // console.log(days);
+        console.log(xDays);
         this.get(this.date);
         this.selectedMonth = this.date.getMonth();
+        // this.monthView = moment.format('Do');
+        // console.log(moment().daysInMonth());
         this.month = moment.months(this.selectedMonth);
         this.people = [
             {
                 FullName: 'amy',
                 Id: 101,
-                Days: [1, 1, 1, 1, 0, 0, null]
+                Days: [1, 1, 1, 1, 0, 0]
             },
             {
                 FullName: 'oscar',
                 Id: 102,
-                Days: [1, 0, 1, 1, 0, 1, null]
+                Days: [1, 0, 1, 1, 0, 1]
             },
             {
                 FullName: 'dexter',
                 Id: 103,
-                Days: [0, 1, 0, 1, 0, 0, null]
+                Days: [0, 1, 0, 1, 0, 0]
             }
         ];
-  this.dataFormatted = true;
-  this.formatChartData();
+        //   this.dataFormatted = true;
+        //   this.formatChartData();
     }
 
 
@@ -104,11 +125,11 @@ export class PersonComponent implements OnInit {
         this.lineChart.chartLabels = this.days;
         this.lineChart.chartOptions = {
             animation: true,
-            multiTooltipTemplate: `<%if (datasetLabel){%><%=datasetLabel %>: <%}%><%= value %>`,
+            // multiTooltipTemplate: `<%if (datasetLabel){%><%=datasetLabel %>: <%}%><%= value %>`,
             responsive: true
         };
 
-        this.dataFormatted = true;
+        // this.dataFormatted = true;
     }
 
     formatColors() {
@@ -147,7 +168,19 @@ export class PersonComponent implements OnInit {
         //     );
     }
 
+    addDay(person: any) {
+        console.log(`successfully added day`, person);
+        // this.peopleService.delete(person).
+        //     .subscribe((pson) => {
+        //         this.people = _.remove(this.people, (p) => {
+        //             return p.Id !== pson.Id;
+        //         });
+        //         console.log(`successfully deleted person`);
+        //     });
+    }
+    
     delete(person: any) {
+        console.log(`successfully deleted person`);
         // this.peopleService.delete(person)
         //     .subscribe((pson) => {
         //         this.people = _.remove(this.people, (p) => {

@@ -21,12 +21,31 @@ table input {
    width:35px; 
 }
 
-table td {
+/*table td {
     padding: 2px 2px;
-}      
+}  */
+
+table {
+    width: 100%;
+}
+
+th, td {
+   text-align: center;
+   
+   border-bottom: 1px solid #ddd;
+   border-left: 1px solid #ddd;
+} 
+
+table {
+    border: 1px solid black;
+}   
+
+/*th, td {
+    border-bottom: 1px solid #ddd;
+}*/
 
 .name {
-    width: 125px !important;
+    width: 60px !important;
     padding-left:5px;
 }
 
