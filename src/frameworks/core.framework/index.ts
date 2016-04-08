@@ -10,6 +10,7 @@ import {Angulartics2Segment} from 'angulartics2/src/providers/angulartics2-segme
 import {AnalyticsService} from './services/analytics.service';
 import {LogService} from './services/log.service';
 
+
 export const ANALYTICS_PROVIDERS: any[] = [
   Angulartics2,
   Angulartics2Segment,

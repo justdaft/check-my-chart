@@ -5,6 +5,8 @@ import {routerReducer, routerMiddleware, RouterState} from 'ngrx-store-router';
 // app
 import {nameListReducer} from './services/name-list.service';
 import {MULTILINGUAL_PROVIDERS, MultilingualStateI, multilingualReducer} from '../i18n.framework/index';
+import { PeopleService } from './services/person.service';
+import { LineChartDirective } from './services/lineChart.service';
 
 // state definition
 export interface AppStoreI {
@@ -25,4 +27,6 @@ export const APP_PROVIDERS: any[] = [
 
 // services
 export * from './services/app-config.service';
+export * from './services/person.service';
+export * from './services/lineChart.service';
 export * from './services/name-list.service';

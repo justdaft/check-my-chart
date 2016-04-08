@@ -7,31 +7,36 @@ import {AppStoreI} from '../../frameworks/app.framework/index';
 import {RouteComponent} from '../../frameworks/core.framework/index';
 
 @RouteComponent({
-  selector: 'sd-navbar',
-  templateUrl: './components/app/navbar.component.html',
-  styleUrls: ['./components/app/navbar.component.css']
+    selector: 'sd-navbar',
+    templateUrl: './components/app/navbar.component.html',
+    styleUrls: ['./components/app/navbar.component.css']
 })
 export class NavbarComponent {
-  // TODO: remove when {N} router supports active states
-  public activeLink: any = {
-    home: true,
-    about: false
-  };
-  
-  constructor(public store: Store<AppStoreI>) {  
-    store.select('router').subscribe((router: RouterState) => {
-      if (!router.navigating) {
-        switch (router.url) {
-          case '':
-            this.activeLink.home = true;
-            this.activeLink.about = false;
-            break;
-          case '/about':
-            this.activeLink.home = false;
-            this.activeLink.about = true;
-            break;
-        }
-      }
-    });
-  }
+    // TODO: remove when {N} router supports active states
+    public activeLink: any = {
+        home: true,
+        about: false
+    };
+
+    constructor(public store: Store<AppStoreI>) {
+        store.select('router').subscribe((router: RouterState) => {
+            if (!router.navigating) {
+                switch (router.url) {
+                    case '':
+                        this.activeLink.home = true;
+                        this.activeLink.about = false;
+                        break;
+                    case '/about':
+                        this.activeLink.home = false;
+                        this.activeLink.about = true;
+                        break;
+                    case '/person':
+                        this.activeLink.home = false;
+                        this.activeLink.about = false;
+                        this.activeLink.person = true;
+                        break;
+                }
+            }
+        });
+    }
 }

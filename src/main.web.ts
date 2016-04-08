@@ -16,6 +16,9 @@ import {AppComponent} from './components/app/app.component';
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfigService.SUPPORTED_LANGUAGES;
 
+
+import { PeopleService } from './frameworks/app.framework/services/person.service';
+
 const ENV_PROVIDERS: Array<any> = [];
 if ('<%= ENV %>' === 'prod' || '<%= TARGET_DESKTOP_BUILD %>' === 'true') {
   enableProdMode();
@@ -29,7 +32,8 @@ let BOOTSTRAP_PROVIDERS: any[] = [
   provide(WindowService, { useValue: window }),
   provide(ConsoleService, { useValue: console }),
   CORE_PROVIDERS,
-  APP_PROVIDERS
+  APP_PROVIDERS,
+  PeopleService
 ];
 
 if ('<%= TARGET_DESKTOP %>' === 'true') {

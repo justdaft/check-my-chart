@@ -19,6 +19,18 @@ gulp.task('build.dev', (done: any) =>
               'build.index.dev',
               done));
 
+// // --------------
+// // Build dev.
+// gulp.task('build.dev', (done: any) =>
+//   runSequence('clean.dev',
+//               'tslint',
+//               'css-lint',
+//               'build.assets.dev',
+//               'build.html_css',
+//               'build.js.dev',
+//               'build.index.dev',
+//               done));
+
 // --------------
 // Build dev watch.
 gulp.task('build.dev.watch', (done: any) =>

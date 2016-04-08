@@ -1,0 +1,68 @@
+{
+  "people": [
+    {
+      "year": [
+        {
+          "2016": [
+            {
+              "id": 3,
+              "name": "Oscar"
+            },
+            {
+              "id": 1,
+              "name": "Dexter"
+            },
+            {
+              "id": 9,
+              "name": "Dex"
+            },
+            {
+              "id": 19,
+              "name": "Dexxxxxx"
+            }
+          ]
+        },
+        {
+          "2017": [
+            {
+              "id": 3,
+              "name": "Oscar"
+            },
+            {
+              "id": 1,
+              "name": "Dexter"
+            },
+            {
+              "id": 9,
+              "name": "Dex"
+            },
+            {
+              "id": 19,
+              "name": "Dexxxxxx"
+            }
+          ]
+        },
+        {
+          "2018": [
+            {
+              "id": 3,
+              "name": "Oscar"
+            },
+            {
+              "id": 1,
+              "name": "Dexter"
+            },
+            {
+              "id": 9,
+              "name": "Dex"
+            },
+            {
+              "id": 19,
+              "name": "Dexxxxxx"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

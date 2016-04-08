@@ -10,6 +10,7 @@ import {NavbarComponent} from './navbar.component';
 import {ToolbarComponent} from './toolbar.component';
 import {HomeComponent} from '../home/home.component';
 import {AboutComponent} from '../about/about.component';
+import {PersonComponent} from '../person/person.component';
 
 @RouteComponent({
   selector: 'sd-app',
@@ -20,7 +21,8 @@ import {AboutComponent} from '../about/about.component';
 })
 @RouteConfig([
   { path: '/', component: HomeComponent, as: 'Home' },
-  { path: '/about', component: AboutComponent, as: 'About' }
+  { path: '/about', component: AboutComponent, as: 'About' },
+  { path: '/person', component: PersonComponent, as: 'Person' }
 ])
 export class AppComponent {
   constructor(public analytics: AnalyticsService) {
